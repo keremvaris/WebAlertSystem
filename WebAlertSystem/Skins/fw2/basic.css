@@ -1,0 +1,648 @@
+﻿/*
+  Defines common appereance for a page. SqlWebControl styles begin with
+  sw and has the following syntax
+    sw(f|g|b)[a|b|f|h|i|s][descriptor(optional)]
+    f : webform style
+    g : grid style
+		b : applicable to both form and grid
+		c : control styles
+
+    a : alternating item (for grid or table)
+    b : body (div, table etc)
+		f : footer
+    h : header
+    i : item (for grid or table)
+    s : selected item (for grid)
+*/
+/*
+Added default style for swc controls as fdc (form default control)
+*/
+/*this is the class for all the elements you want to persist in client side*/
+/* movable elements */
+.move {behavior:url(swc/res/movable.htc.aspx);padding:2 2 2 2;border:solid 1px red;background-color:White;}
+/* element styles */
+BODY
+{
+	font-family:Times;
+	font-size: 12pt;
+	background-color: #FFFCE8;
+	scrollbar-3dlight-color:#ECE9D8;
+	scrollbar-base-color:#ECE9D8;
+	scrollbar-darkshadow-color:#ECE9D8;
+	background-image:url(diagonal_grey.gif);
+}
+TABLE
+{
+	font-family:Tahoma;
+	font-size: 9pt;
+}
+P
+{
+	background-color: #fff0c0;
+	font-weight: bold;
+}
+BUTTON, INPUT, SELECT, TEXTAREA 
+{
+	font-family:Tahoma;
+	font-weight: bold;
+	background-color: #FFFFFF;
+	border:solid 1px black; /* #7F9DB9; */
+}
+LI
+{
+	font-size: 8pt;
+}
+/* Applicable to both form and grid */
+.swbi
+{
+  color:White;
+}
+.swbi:hover
+{
+/*	BACKGROUND-COLOR: red; */
+}
+.swba
+{
+  color:White;
+}
+.swbs
+{
+ 	background-color: #336699;
+	color:#EFECDD; 
+}
+/* SqlForm styles */
+.swf
+{
+	border:solid 3px transparent;
+	color:white;
+	background-color:Transparent;
+}
+swf TD 
+{
+	border:1px solid black;
+  padding:0 0 0 0;
+  margin: 0 0 0 0;
+}
+.swf div
+{
+	font-weight: bold;
+	color: #FCFCFC;
+/*	background-color:#ECE9D8; */
+}
+.swfb
+{
+	scrollbar-3dlight-color:#ECE9D8;
+	scrollbar-base-color:#ECE9D8;
+	scrollbar-darkshadow-color:#ECE9D8;
+}
+.swfh TD
+{
+	font-size: 11pt;
+/*	background-color:#ECE9D8; */
+	color:white; /* #336699; */
+}
+TD.swfhpn 
+{
+	font-size:8pt;
+	cursor:hand;
+	text-align:right;
+}
+.swfbf
+{
+	background-color:#ECE9D8;
+	width:100%;
+}
+.swfbf input[type=text], .swfbf select, .swfbf textarea
+{
+	font-size: 8pt;
+	background-color: #FFFFFF;
+	width:100%; 
+}
+/*
+.swfbf TD DIV
+{
+	padding-left:2pt;
+	font-weight: bold;
+	background-color: #FFFFFF;
+	border:solid 1px #7F9DB9;
+	color:Black;
+}
+*/
+.swfbtn
+{
+  
+BACKGROUND-IMAGE:url(bimg/btnbk.png);  background-repeat:repeat-x; 
+border-left:solid 1px black;
+border-right:solid 1px black;
+
+height:32px;
+margin:0 2 0 2;
+}
+/* the important attributes overrides the asp.net 2.0 image bug
+of auto added border:0 style attribute */
+.feb
+{
+	/* border:solid 1px black !important; */
+	/* background-color: #FFFFFF; */
+	background-color:Transparent;
+	border:solid 1px transparent !important; 
+	margin:8 3 4 3;
+}
+.fdb
+{
+	border:solid 1px transparent !important; /* #ECE9D8; */
+	background-color: transparent;
+	margin:8 3 4 3;
+}
+.swfbt
+{
+	border:inset 1px #FFFFEF;
+	border-top:solid 1px #CEC69A;
+	border-left:none;
+	color:#000000;
+/*	background-color:#EFECDD; */
+	font-size:9pt;
+}
+/* used when table is active */
+.swfbt TD
+{
+	border:none;
+}
+.swfbt TD LABEL
+{
+	color: white; /* #000000; */
+}
+.swfbt TD A
+{
+	color: orange;
+	font-weight:bold;
+	text-decoration:none;
+	cursor:hand;
+}
+.swfbt TD A:hover
+{
+	color:#FFFFFF;
+}
+/* used when table is inactive */
+.swfbti
+{
+	border:inset 1px #FFFFEF;
+	border-top:solid 1px #CEC69A;
+	border-left:none;
+	color:#000000;
+/*	background-color:#EFECDD; */
+	font-size:9pt;
+}
+.swfbti TD
+{
+	/*border:none;*/
+}
+.swfbti TD LABEL
+{
+	color:#000000;
+}
+.swfbti TD A
+{
+	color: orange;
+	font-weight:bold;
+	text-decoration:none;
+	cursor:hand;
+}
+.swfbti TD A:hover
+{
+	color:#FFFFFF;
+}
+TD.swcv
+{
+	font-size:8pt;
+	font-weight:bold;
+	background-color: white;
+	color:Black;
+	border: solid 1px black; /* #7F9DB9; */
+}
+INPUT.swcok 
+{
+	font-size:8pt;
+	font-weight:bold;
+	background-color:Lime;
+	color: white;
+	border: solid 1px #7F9DB9;
+}
+TD.swcok 
+{
+	font-size:8pt;
+	font-weight:bold;
+	background-color:Lime;
+	color: white;
+	border: solid 1px #7F9DB9;
+}
+/* header etc */
+.swfh
+{
+/*	background-color: #F6F4EA; */
+	font-weight:bold;
+}
+.swfchk
+{
+	BACKGROUND-COLOR: #EEEEE2;
+	height:11px;	
+}
+.swff
+{
+	color:white; font-weight:bold;
+}
+.swff span
+{
+	color:steelblue;
+}
+.swftab
+{
+	/* BACKGROUND-COLOR: #F6F4EA; */
+	height:24px;
+	vertical-align:middle;
+	padding: 4 4 4 4;
+}
+.fdp /* inactive tab */
+{
+	border:outset 1px steelblue;
+	margin:1 1 1 1;
+	padding:2 2 2 2;
+	height:16px;
+	font-size:9pt;/*x-small;*/
+	TEXT-ALIGN: center;
+	cursor:hand;
+	color:white;
+	vertical-align:middle;
+}
+.fep /* active tab */
+{
+	border:outset 2px steelblue;
+	background-color:#336699;
+	color:White;
+	margin:1 1 1 1;
+	padding:2 2 2 2;
+	height:16px;
+	font-size:9pt;/*x-small;*/
+	TEXT-ALIGN: center;
+	cursor:hand;
+	vertical-align:middle;
+}
+/* SqlWebGrid styles */
+.swgb
+{
+  border:none;
+/*	border:solid 1px #CEC69A; */
+	color:#000000;
+/*	background-color:#F6F4EA; */
+	font-size: 8pt;
+	
+}
+.swgb TD
+{
+	border:none;
+}
+.swgh TD
+{
+	font-size:9pt;/*x-small;*/
+/*	border-bottom:solid 1px #CEC69A; */
+	color:black;
+	font-weight:bold;
+	float:none;
+	background-color:Transparent;
+	/* background-color:#ECE9D8; */
+}
+.swgf TD
+{
+/*	border-top:solid 1px #FFFFEF; */
+	font-size:8pt;
+	font-weight:bold;
+	background-color:Transparent;
+	/* background-color:#ECE9D8; */
+	color:#000000;
+	float:none;
+}
+.swgf INPUT
+{
+	font-size:8pt;
+}
+/* control styles */
+/* navigator */
+.nc 
+{
+	background-color:dimgray;
+	color:white;
+  width:100%;
+}
+.nc A 
+{
+	text-decoration:none;
+	color:White;
+	white-space:nowrap;
+}
+.nc A:hover
+{
+  color:yellow;
+}
+.nc TD 
+{ 
+}
+.nc SPAN {
+  font-family:Webdings;
+}
+/* grid highlighting enhancements */
+.ghGreen /* indicates ok */
+{
+	background-color:LimeGreen;
+	color:white;
+}
+.ghBlue
+{
+	background-color:SteelBlue;
+	color:yellow;
+}
+.ghRed /* indicates caution */
+{
+	background-color:crimson;
+	color:yellow;
+}
+.ghOrange /*indicates some deadline is near (warning) */
+{
+	background-color:orange;
+	color:yellow;
+}
+.ghGray /*indicates some deadline is near (warning) */
+{
+	color:  Silver;
+}
+/* dialog styles */
+.dlgH 
+{
+	border:solid 1px black;
+	background-color:White;
+	font-size:14pt;
+	font-weight:bold;
+}
+.dlgB 
+{
+}
+.dlgF
+{
+}
+.errDlg 
+{
+	display: none;
+	Z-INDEX: 102; 
+	LEFT: 226px; 
+	WIDTH: 319px; 
+	POSITION: absolute; 
+	TOP: 152px; 
+	/*HEIGHT: 176px; */
+	border:solid 1px black;/*#CEC69A;*/
+}
+.errDlg TABLE 
+{
+	width:100%;
+	height:100%;
+	background-color: #ECE9D8;	
+	FONT-WEIGHT: bold;	
+}
+.errDlg THEAD
+{
+	BACKGROUND-COLOR: gray;
+	height:24px; 
+	MARGIN: 4px; 
+	COLOR: white; 
+/*	FONT-VARIANT: small-caps;*/
+}
+.errDlg THEAD TD 
+{
+	border:solid 1px black;/*7F9DB9;*/
+}
+.errDlg TD
+{
+	vertical-align:middle;
+}
+.errDlg INPUT 
+{
+	width:64px;
+}
+TD.errDlgi
+{
+	width:48px;
+	vertical-align:middle;
+  text-align:center;
+}
+/* these are applied to DonorCard, PatientCard, ProductCard to
+indicate warnings and critical situations*/
+TD.critical
+{
+	color:White;
+	filter:progid:DXImageTransform.Microsoft.Glow(Color=Red,Strength=2); 
+}
+TD.warn
+{
+	color:Yellow;
+	filter:progid:DXImageTransform.Microsoft.Glow(Color=#805400,Strength=2); 
+}
+TD.ok
+{
+	color:Lime;
+	filter:progid:DXImageTransform.Microsoft.Glow(Color=DarkGreen,Strength=2); 
+}
+.ok 
+{
+	color:Lime;
+	filter:progid:DXImageTransform.Microsoft.Glow(Color=DarkGreen,Strength=2); 
+}
+.crit
+{
+	color:white;
+	filter:progid:DXImageTransform.Microsoft.Glow(Color=Red,Strength=2); 
+}
+/* these are used by range validators */
+TD.rwcr
+{
+	color:White;
+	background-color:Red;
+	font-weight:bold;
+	border:solid 1px #7F9DB9;
+}
+TD.rwwa
+{
+	color:White;
+	background-color:Orange;
+	font-weight:bold;
+	border:solid 1px #7F9DB9;
+}
+TD.rwok
+{
+	color:Lime;
+	filter:progid:DXImageTransform.Microsoft.Glow(Color=DarkGreen,Strength=2); 
+	font-weight:bold;
+	border:solid 1px #7F9DB9;
+}
+INPUT.critical
+{
+	color:white;
+	background-color:Red;
+}
+INPUT.warn
+{
+	color:White;
+	background-color:Orange;
+}
+/* bloodgroupbox styles */
+.bgN
+{
+	border:solid 1px black;
+	font-family:Arial;
+}
+.bgE
+{
+	margin:1 1 1 1;
+  border:solid 1px #CEC69A;
+	font-family:Arial;
+	cursor:hand;
+}
+.bgO
+{
+	margin:0 0 0 0;
+	border:outset 2px #CEC69A;
+	font-family:Arial;
+	cursor:hand;
+}
+.big
+{
+	font-size: 11pt;
+	color:#336699;
+	font-weight:bold;
+}
+.bmtT 
+{
+	border:none;
+	font-weight:bold;
+}
+.bmtC
+{
+	width:32px;
+	border:none;
+}
+.bmtCx
+{
+	border:none;
+}
+.grid {
+	border:solid 1px #CEC69A;
+	color:#336699;
+	background-color:#ECE9D8;
+}
+.grid TD {
+	border:solid 1px;
+}
+
+.Scrollable
+{
+	scrollbar-3dlight-color:#ECE9D8;
+	scrollbar-base-color:#ECE9D8;
+	scrollbar-darkshadow-color:#ECE9D8;
+}
+/* Special for some controls*/
+.notes 
+{
+	position:relative;
+	z-index:101;
+	left:2px;
+	top:-3px;
+	border-style:none;
+	background-color:Transparent;
+}
+/* Control styles */
+.fdc 
+{
+	width:100%;
+}
+/* light form image borders */
+.nw
+{
+  width:11px;height:10px;  border:none;  BACKGROUND-IMAGE:url(border/135.nw.png);
+}
+.ne
+{
+  width:11px;height:10px;  border:none;  BACKGROUND-IMAGE:url(border/045.ne.png);
+}
+.sw
+{
+  width:11px;height:10px;  border:none;  BACKGROUND-IMAGE:url(border/225.sw.png);
+}
+.se
+{
+  width:11px;height:10px;  border:none;  BACKGROUND-IMAGE:url(border/315.se.png);
+}
+.w
+{
+  width:11px;  border:none;  BACKGROUND-IMAGE:url(border/180.w.png);
+}
+.n
+{
+  height:10px;  border:none;  BACKGROUND-IMAGE:url(border/090.n.png); background-repeat:repeat-x;
+}
+.s
+{
+  height:10px;  border:none;  BACKGROUND-IMAGE:url(border/270.s.png);  background-repeat:repeat-x;
+}
+.e
+{
+  width:11px;  border:none;  BACKGROUND-IMAGE:url(border/000.e.png);
+}
+.ft 
+{
+  margin:0;
+  padding:0;
+  width:100%;
+  height:100%;
+  background-image:url(border/bk.png); background-repeat:repeat-x;  
+  position:fixed;
+  top:0;
+  left:0;
+  position:static;
+  background-size:auto;
+}
+/* dark form image borders */
+.dnw
+{
+  width:6px;height:6px;  border:none;  BACKGROUND-IMAGE:url(border/d.135.png);
+}
+.dne
+{
+  width:6px;height:6px;  border:none;  BACKGROUND-IMAGE:url(border/d.045.png);
+}
+.dsw
+{
+  width:6px;height:6px;  border:none;  BACKGROUND-IMAGE:url(border/d.225.png);
+}
+.dse
+{
+  width:6px;height:6px;  border:none;  BACKGROUND-IMAGE:url(border/d.315.png);
+}
+.dw
+{
+  width:6px;  border:none;  BACKGROUND:url(border/d.180.png) no-repeat;background-size: 100%;
+}
+.dn
+{
+  height:6px;  border:none;  BACKGROUND-IMAGE:url(border/d.090.png); background-repeat:repeat-x;
+}
+.ds
+{
+  height:6px;  border:none;  BACKGROUND-IMAGE:url(border/d.270.png);  background-repeat:repeat-x;
+}
+.de
+{
+  width:6px;  border:none;  BACKGROUND:url(border/d.000.png) no-repeat;background-size: 100%;
+
+}
+.dft 
+{
+  BACKGROUND-IMAGE:url(border/d.bk.png); background-repeat:repeat-x;
+}
+/* Framework Image buttons */
